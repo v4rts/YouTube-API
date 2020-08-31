@@ -3,13 +3,20 @@ import Search from './components/Search';
 import List from './components/List';
 import Description from './components/Description';
 
-const App = () => {
-    return(
-        <div ClassName = "wrapper">
-            <Search />
-            <List />
-            <Description />
-        </div>
-    )
+class App extends React.Component {
+
+    handleAccept = () => {
+
+    }
+
+    render() {
+        return (
+            <div className="wrapper">
+                <Search onFormAccept={this.handleAccept()}/>
+                <List/>
+                <Description/>
+            </div>
+        )
+    }
 }
 export default App;
