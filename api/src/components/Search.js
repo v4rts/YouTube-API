@@ -13,7 +13,7 @@ class Search extends React.Component{
     }
 
     /* Fetch searchTerm from the state */
-    handleAccept = () => {
+    handleAccept = (event) => {
         let { searchTerm } = this.state; /* this.state.searchTerm */
         let { onFormAccept } = this.props;
 
