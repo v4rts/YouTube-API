@@ -25,8 +25,8 @@ class Search extends React.Component{
     render() {
         return(
             <Paper elevation={6}>
-                <form onSubmit={this.handleSubmit}>
-                    <TextField fullWidth label = 'Print this to search...' onChange = {this.handleChange}></TextField>
+                <form onSubmit={this.handleAccept}>
+                    <TextField fullWidth label = 'Print this to search...' onChange = {this.handleChange} />
                 </form>
             </Paper>
         );
