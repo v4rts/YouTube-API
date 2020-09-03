@@ -5,6 +5,11 @@ import Description from './components/Description';
 import youtube from './API/YouTubeAPI';
 class App extends React.Component {
 
+    state = {
+        videos: [],
+        selectedVideo: null,
+    }
+
     handleAccept = async (searchTerm) => {
         const response = await youtube.get('search', {
             params: {
@@ -16,14 +21,19 @@ class App extends React.Component {
         });
 
         console.log(response);
+
+        this.setState({
+            videos: response.data.items,
+            selectedVideo: response.data.items[0]
+        });
     }
 
     render() {
         return (
             <div className="wrapper">
                 <Search onFormAccept = {this.handleAccept}/>
+                <Description video = {this.state.selectedVideo}/>
                 <List/>
-                <Description/>
             </div>
         )
     }
