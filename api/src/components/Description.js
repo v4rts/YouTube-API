@@ -14,7 +14,9 @@ const Description = ( {video} ) => {
                 </Paper>
 
                 <Paper elevation = {6} style = {{padding : '15px'}}>
-
+                    <Typography variant="h4">{video.snippet.title}</Typography>
+                    <Typography variant="subtitle1">{video.snippet.channelTitle}</Typography>
+                    <Typography variant="subtitle2">{video.snippet.description}</Typography>
                 </Paper>
             </React.Fragment>
         );
